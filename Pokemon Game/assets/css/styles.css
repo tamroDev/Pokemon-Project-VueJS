@@ -534,6 +534,10 @@ https://github.com/animate-css/animate.css/blob/main/source/attention_seekers/sh
   perspective: 60rem;
 }
 
+.game-list-cards--6 {
+  max-width: 70rem;
+}
+
 .game-list-cards--8 {
   max-width: 90rem;
 }
