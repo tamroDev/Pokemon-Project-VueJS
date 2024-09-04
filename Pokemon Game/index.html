@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Pokemon Game</title>
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/images/favicon.ico"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body cz-shortcut-listen="true">
+    <div id="app">
+      <div class="page-content">
+        <!-- <div class="current-date-time"></div> -->
+        <img
+          src="assets/images/cyberlearn-min-new-opt2.png"
+          alt=""
+          class="logo-pokemon"
+        />
+        <h1 class="page-title">Cyber Pokemon</h1>
+        <form class="game-options">
+          <label for="gameOption1" class="game-options__label"
+            ><input
+              id="gameOption1"
+              type="radio"
+              value="4"
+              class="game-options__input"
+            />
+            <svg width="20px" height="20px" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="9"></circle>
+              <path
+                d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                class="inner"
+              ></path>
+              <path
+                d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                class="outer"
+              ></path>
+            </svg>
+            <span class="game-options__text"> 4 </span></label
+          >
+          <label for="gameOption2" class="game-options__label"
+            ><input
+              id="gameOption2"
+              type="radio"
+              value="6"
+              class="game-options__input"
+            />
+            <svg width="20px" height="20px" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="9"></circle>
+              <path
+                d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                class="inner"
+              ></path>
+              <path
+                d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                class="outer"
+              ></path>
+            </svg>
+            <span class="game-options__text"> 6 </span></label
+          >
+          <label for="gameOption3" class="game-options__label"
+            ><input
+              id="gameOption3"
+              type="radio"
+              value="8"
+              class="game-options__input"
+            />
+            <svg width="20px" height="20px" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="9"></circle>
+              <path
+                d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                class="inner"
+              ></path>
+              <path
+                d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                class="outer"
+              ></path>
+            </svg>
+            <span class="game-options__text"> 8 </span></label
+          >
+          <label for="gameOption4" class="game-options__label"
+            ><input
+              id="gameOption4"
+              type="radio"
+              value="10"
+              class="game-options__input"
+            />
+            <svg width="20px" height="20px" viewBox="0 0 20 20">
+              <circle cx="10" cy="10" r="9"></circle>
+              <path
+                d="M10,7 C8.34314575,7 7,8.34314575 7,10 C7,11.6568542 8.34314575,13 10,13 C11.6568542,13 13,11.6568542 13,10 C13,8.34314575 11.6568542,7 10,7 Z"
+                class="inner"
+              ></path>
+              <path
+                d="M10,1 L10,1 L10,1 C14.9705627,1 19,5.02943725 19,10 L19,10 L19,10 C19,14.9705627 14.9705627,19 10,19 L10,19 L10,19 C5.02943725,19 1,14.9705627 1,10 L1,10 L1,10 C1,5.02943725 5.02943725,1 10,1 L10,1 Z"
+                class="outer"
+              ></path>
+            </svg>
+            <span class="game-options__text"> 10 </span></label
+          >
+        </form>
+        <div class="game-data">
+          <p class="game-data__item game-data__fails">
+            bad select number: {{ gameData.badSelect }}
+          </p>
+        </div>
+        <ul class="game-list-cards">
+          <li
+            v-for="(card,index) in cards"
+            :key="index"
+            class="game-card"
+            :class="{ 'is-covered' : coveredCard.includes(card) , 'is-unCovered' : unCoveredCard.includes(card)}"
+            @click="handleSelectCard(card)"
+          >
+            <div class="game-card__face game-card-front">
+              <h3 class="game-card-front__name">{{card.name}}</h3>
+              <img
+                :src="card.images.png.front"
+                class="game-card-front__image"
+              />
+            </div>
+            <div class="game-card__face game-card-back">
+              <div class="game-card-back__inner">?</div>
+            </div>
+          </li>
+        </ul>
+        <button class="button button--game" @click="handleResetGame">
+          Reset Game
+        </button>
+        <div v-if="gameResume.win" class="game-result game-result--win">
+          Win
+        </div>
+        <div v-if="gameResume.lost" class="game-result game-result--lose">
+          Lost
+        </div>
+        <!---->
+      </div>
+      <!---->
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
